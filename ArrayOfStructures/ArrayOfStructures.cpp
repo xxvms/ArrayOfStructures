@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <iomanip>
+
 struct part
 {
 	int modelNumber; //ID number of widget
@@ -30,12 +32,16 @@ int main()
 	std::cout << std::endl;
 	for (n = 0; n < SIZE; n++) //show values for all members
 	{
-		std::cout << "Model " << aPart[n].modelNumber;
-		std::cout << " Part " << aPart[n].partNumber;
-		std::cout << " Cost " << aPart[n].cost;
+		std::cout << "Model " << std::setiosflags(std::ios::fixed) 
+			<< std::setiosflags(std::ios::showpoint) << std::setprecision(2) << aPart[n].modelNumber;
+		std::cout << " Part " << std::setiosflags(std::ios::fixed)
+			<< std::setiosflags(std::ios::showpoint) << std::setprecision(2) << aPart[n].partNumber;
+		std::cout << " Cost " << std::setiosflags(std::ios::fixed)
+			<< std::setiosflags(std::ios::showpoint) << std::setprecision(2) << aPart[n].cost;
+		std::cout << std::endl;
 	}
 
-
+	system("pause");
     return 0;
 }
 
